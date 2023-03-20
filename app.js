@@ -94,6 +94,16 @@ app.post('/nota', (req, res) => {
 
 // Exercicio 3
 
+app.get('/exercicio3', (req, res) => {
+    res.render('exercicio3', {nome: '', sobreNome: '', idade: '', pais: ''})
+})
 
+app.post('/info', (res, req) => {
+    nome = req.body.nome;
+    sobreNome = req.body.sobreNome;
+    idade = req.body.idade;
+    pais = req.body.pais;
+    res.render('exercicio3', {nome: nome, sobreNome: sobreNome, idade: idade, pais: pais})
+})
 
 app.listen("3000",()=>console.log("Servidor iniciado"));
